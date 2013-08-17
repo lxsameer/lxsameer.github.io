@@ -1,0 +1,177 @@
+@import "../lib/Riuma/less/Riuma.less";
+
+
+@activityHeight: 450px;
+@activityMargin: 70px;
+
+@linkColor: white;
+@linkHoverColor: lighten(#A3DA53, 5%);
+@contentColor1: #63BBDD;
+@contentColor2: #519BB7;
+
+@boxLinkColor: #63BBDD;
+@boxLinkHoverColor: #519BB7;
+
+.gradient-radial(@A, @B) {
+    background-image: -moz-radial-gradient(center center, circle, @A, @B);
+    background-image: -webkit-radial-gradient(center center, circle, @A, @B);
+    background-image: -o-radial-gradient(center center, circle, @A, @B);
+    background-image: radial-gradient(center center, circle, @A, @B);
+}
+
+.radial_gradient {
+    .gradient-radial(@contentColor1, @contentColor2);
+}
+
+.transition (@a){
+    transition: @a;
+    -moz-transition: @a;
+    -webkit-transition: @a;
+    -o-transition: @a;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    color: #eeeeec;
+    background: @contentColor2;
+    font-family: 'Signika Negative', sans-serif;
+
+}
+a {
+    color: @linkColor;
+    .transition(~"color 300ms linear 0ms");
+    text-shadow: 0px 1px 1px gray;
+}
+a:hover {
+    color: @linkHoverColor;
+    text-decoration: none;
+    .transition(~"color 300ms linear 0ms");
+
+}
+
+.canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    .gradient-radial(@contentColor1, @contentColor2);
+
+}
+
+.red {
+    background: red;
+}
+.blue {
+    background: blue;
+}
+
+.text-center {
+    text-align: center;
+}
+
+header {
+    padding-top: 20px;
+
+}
+nav {
+
+    border-top: 1px solid #519BB7;
+    padding-top: 10px;
+    .span6 {
+	margin-left: 0px;
+
+    }
+
+
+}
+
+.vertical {
+    list-style: none;
+    li {
+	display: inline;
+	padding: 10px;
+    }
+    .social {
+	padding: 0px;
+    }
+
+}
+
+content {
+    margin-top: @activityMargin;
+    position: absolute;
+}
+.box {
+    color: #666;
+    background: white;
+    border-radius: 4px;
+    min-height: @activityHeight;
+    heigth: @activityHeight;
+    font-size: 16px;
+    .avatar {
+	border-radius: 3px;
+	width: 20px;
+	height: 20px;
+	margin-top: -2px;
+    }
+    a {
+	color: @boxLinkColor;
+	text-shadow: none;
+	.transition(~"color 300ms linear 0ms");
+    }
+    a:hover {
+	color: @boxLinkHoverColor;
+	text-decoration: none;
+	.transition(~"color 300ms linear 0ms");
+
+    }
+
+    #loading {
+	position: absolute;
+	margin-top: @activityMargin + (@activityHeight/4);
+	text-align: center;
+	padding: 0;
+    }
+    #atom {
+	position: relative;
+	border-radius: 4px;
+	height: @activityHeight;
+	overflow-y: auto;
+
+	div {
+	    padding: 10px 40px;
+	}
+    }
+}
+
+footer {
+    position: absolute;
+    color: #e2e2e2;
+    margin-top: @activityHeight + @activityMargin + 60px;
+}
+
+.large-text {
+    line-height: 1.5;
+    font-size: 26px;
+    text-align: justify;
+    p {
+	margin: 10px 0;
+    }
+
+    ul li {
+	margin: 15px 0 15px 10px;
+    }
+}
+
+.green {
+    color: @linkHoverColor;
+}
+
+.err {
+    color: #FB5073;
+}
